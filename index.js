@@ -84,8 +84,10 @@ function Car(model, milesPerGallon) {
   Car.prototype.drive = function(distance) {
     this.odometer += distance;
     // tank needs to go down at the same rate of miles per gallon
-    
+
   }
+
+  // car that runs out of fuel while driving can't drive any more distance
 }
   
   
@@ -96,10 +98,19 @@ function Car(model, milesPerGallon) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
+function Baby(name, age, favoriteToy) {
+  // use a .call here on Person?
+  Person.call(this);
+  this.name = name;
+  this.age = age;
+  this.favoriteToy = favoriteToy;
+
+  Baby.prototype.play = function(){
+    return `Playing with ${favoriteToy}`
   }
- 
+
+}
+
   
   /* 
     TASK 4
